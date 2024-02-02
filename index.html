@@ -1,0 +1,41 @@
+<!-- FILEPATH: /valentine/index.html -->
+<!--
+    Auteur: Ony Brunella ANDRIATSAHAVOJAONA
+    Description: This HTML file is used for the main page. It is displayed when the user opens the website. It contains the proposal and the buttons to accept or decline the proposal.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Main page for proposing and answer the proposal">
+    <meta name="keywords" content="celebration, proposal, love">
+    <meta name="author" content="Ony Brunella ANDRIATSAHAVOJAONA">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/img/flower.png" type="image/x-icon">
+    <title>Valentine's Day Proposal</title>
+</head>
+<body light-mode="light">
+    
+    <!-- <input type="checkbox"  class="light-mode-button" id="toggleIndex" aria-label="Toggle Light Mode" onclick="toggle_dark_light_mode()" >
+    <label id="switch" for="toggleIndex">
+        <div id="circle"></div>
+        <div id="text-light">☀️</div>
+        <div id="text-dark">🌙</div>
+    </label> -->
+    
+    <div class="container">
+
+        <img class="img" src="https://media.giphy.com/media/gDfteqLchLcRTtjAD7/giphy.gif" alt="Turtle GIF" loading="lazy">
+        <h1 class="text">Will you be my Valentine ?</h1>
+        <div class="buttons">
+            <button class="heart-button" id="yesButton" onclick="accept()">Yes</button>
+            <button class="heart-button" id="noButton" onclick="decline()">No</button>
+        </div>
+        <img class="bird-img" src="assets/img/bird.gif" alt="" loading="lazy">
+        <!-- Link to the gif : https://giphy.com/stickers/walking-duck-waddle-iOoTB0LvnZdW6Z5MhW -->
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  align-items: center; 
+  justify-content: center;
+  transition: background-color .3s;
+}
+
+.container {
+    text-align: center; 
+    max-width: 100%;
+}
+
+/* Animation img */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Animation text */
+
+@keyframes bounceText {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+@-webkit-keyframes bounceText {
+    0% {
+      -webkit-transform: scale(0.1);
+      opacity: 0;
+    }
+    60% {
+      -webkit-transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+    }
+  }
+/* Anger Animation img */
+@keyframes angerAnimation {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    25%, 75% {
+        transform: scale(1.2) rotate(10deg);
+    }
+    50% {
+        transform: scale(1) rotate(0deg);
+    }
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(-5px);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(5px);
+    }
+}
+@-webkit-keyframes angerAnimation {
+    0%, 100% {
+        -webkit-transform: scale(1) rotate(0deg);
+    }
+    25%, 75% {
+        -webkit-transform: scale(1.2) rotate(10deg);
+    }
+    50% {
+        -webkit-transform: scale(1) rotate(0deg);
+    }
+    0%, 100% {
+        -webkit-transform: translateX(0);
+    }
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translateX(-5px);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translateX(5px);
+    }
+}
+
+
+.text {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-name: bounceText;
+    animation-name: bounceText;
+}
+
+.img, .bird-img {
+    max-width: 100%;
+    height: auto; 
+    animation: fadeIn 1s ease-in-out;
+}
+
+.buttons {
+    margin-top: 20px;
+    position: relative; 
+}
+
+button {
+    position: absolute;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px 50px;
+    cursor: pointer;
+    color: white;
+    background-color: #ef6351;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s; 
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px #d61900;
+}
+
+button:hover {
+    background-color: #d43e2a; 
+    box-shadow: 0 0 10px #d61900; 
+}
+
+#noButton{
+    left: 50%; 
+    transform: translateX(-50%);
+    animation: moveButtonNo 2s infinite;
+}
+
+@keyframes moveButtonNo {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-5px, -5px);
+    }
+}
+
+#yesButton {
+    right: 50% ;
+    transform: translateX(50%);
+    animation: moveButtonYes 2s infinite;
+}
+
+@keyframes moveButtonYes {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(5px, 5px);
+    }
+}
+#yesButton:hover::after {
+    content: "😊";
+    margin: 5px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#noButton:hover::after {
+    content: "😟"; 
+    margin: 5px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.bird-img {
+    max-width: 100%;
+    height: auto;
+    padding: 50px;
+    margin-top: 100px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Celebration Styles */
+
+.celebration-image {
+    max-width: 100%;
+    height: auto;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.celebration-text {
+    color: #FF5470ff;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-name: bounceText;
+    animation-name: bounceText;
+}
+
+.celebration-button {
+    display: inline-block;
+    padding: 12px 20px; 
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #d61900;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    animation: heartBeat 1.3s infinite, fadeIn 1s ease-in-out;
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 50px #d61900;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.celebration-button:hover {
+    background-color: #FF8C99;
+    color: #fff; 
+}
+
+/* Heart animation */
+.heart {
+    position: absolute;
+    background: url(../img/heart.png) no-repeat;
+    background-size: contain;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    animation: heart-fall linear infinite;
+}
+
+@keyframes heart-fall {
+    0% {
+        opacity: 1;
+        transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+@-webkit-keyframes heart-fall {
+    0% {
+    opacity: 1;
+        -webkit-transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(100vh) rotate(360deg);
+    }
+}
+/* Countdown Styles */
+.countdown {
+    margin-top: 20px;
+    color: #603C33ff;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-name: bounceText;
+    animation-name: bounceText;
+}
+
+li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+  }
+  
+li span {
+    display: block;
+    font-size: 4.5rem;
+  }
+
+#days, #hours, #minutes, #seconds {
+    display: inline-block;
+    margin-right: 5px;
+}
+#countdown-text {
+    font-size: 2em;
+}
+
+/* DARK MODE */
+/* body[light-mode=dark] {
+    background-color: black; 
+    color: white; 
+}
+
+body[light-mode="dark"] .light-mode-button span:nth-child(1){
+    background-color: white; 
+    color: black; 
+}
+
+body[light-mode=dark] .light-mode-button span:nth-child(2) {
+    left: 65px;
+    background-color: black; 
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+  
+  
+#switch {
+    margin: 20px;
+    position: relative;
+    display: block;
+    width: 100px; 
+    height: 50px; 
+    background-color: #FF8C99;
+    border-radius: 37.5px; 
+    cursor: pointer;
+}
+
+#circle {
+    width: 40px;
+    height: 40px; 
+    background-color: white;
+    position: relative;
+    top: 4px;
+    left: 4px; 
+    border: 3px solid white;
+    border-radius: 29px; 
+    transition: 0.4s ease left, 0.4s ease background-position;
+    z-index: 2;
+}
+
+#text-light, #text-dark {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 20px; 
+    font-weight: 300;
+    margin-left: 60px; 
+    z-index: 1;
+}
+
+#text-dark {
+    margin-left: 10px; 
+    text-align: right;
+}
+
+#toggleIndex:checked + #switch #circle, #toggleCelebration:checked + #switch #circle {
+    left: 50px;
+    background-color: black;
+    border: 3px solid black;
+
+}
+
+#toggleIndex:checked + #switch, #toggleCelebration:checked + #switch {
+    background-color: #d61900;
+} */
