@@ -12,6 +12,7 @@ html, body {
   align-items: center; 
   justify-content: center;
   transition: background-color .3s;
+  overflow-x: hidden !important;
 }
 
 .container {
