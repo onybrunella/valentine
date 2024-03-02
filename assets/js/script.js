@@ -91,7 +91,7 @@ function fallingHearts(count) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const targetDate = new Date('2024-02-14T00:00:00').getTime();
+    const targetDate = new Date('2025-02-14T00:00:00').getTime();
     /**
      * Updates the countdown timer based on the current date and target date.
      */
