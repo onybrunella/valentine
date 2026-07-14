@@ -240,12 +240,14 @@ button:hover {
 
 /* Heart animation */
 .heart {
-    position: absolute;
+    position: fixed;
     background: url(../img/heart.png) no-repeat;
     background-size: contain;
     top: 0;
     width: 100px;
     height: 100px;
+    pointer-events: none;
+    z-index: 0;
     animation: heart-fall linear infinite;
 }
 

@@ -69,25 +69,26 @@ function accept() {
     window.location.href = "celebration.html";
 }
 
-if (window.location.href.includes("celebration.html")) {
-    fallingHearts(20);
-}
-
 /**
- * Creates falling hearts on the screen.
+ * Creates falling hearts across the full viewport width.
  * @param {number} count - The number of hearts to create.
  */
 function fallingHearts(count) {
-    if (count > 0) {
+    for (let i = 0; i < count; i++) {
         const heart = document.createElement("div");
         heart.classList.add("heart");
-        heart.style.left = Math.random() * window.innerWidth + "px";
+        // Keep hearts on-screen (100px wide) across the full viewport
+        heart.style.left = Math.random() * 90 + "%";
         heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+        heart.style.animationDelay = Math.random() * 2 + "s";
         document.body.appendChild(heart);
-
-        // Call the function recursively with reduced count
-        fallingHearts(count - 1);
     }
+}
+
+if (window.location.pathname.includes("celebration.html")) {
+    document.addEventListener("DOMContentLoaded", function () {
+        fallingHearts(20);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
