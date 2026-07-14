@@ -91,16 +91,42 @@ function fallingHearts(count) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const targetDate = new Date('2026-02-14T00:00:00').getTime();
+    const countdown = document.querySelector('.countdown');
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    // Countdown only exists on the celebration page
+    if (!countdown || !daysEl || !hoursEl || !minutesEl || !secondsEl) {
+        return;
+    }
+
     /**
-     * Updates the countdown timer based on the current date and target date.
+     * Next Valentine's Day (Feb 14). If today is past Feb 14, use next year.
+     */
+    function getNextValentineDate() {
+        const now = new Date();
+        let year = now.getFullYear();
+        const valentineThisYear = new Date(year, 1, 14); // month is 0-indexed
+
+        if (now >= valentineThisYear) {
+            year += 1;
+        }
+
+        return new Date(year, 1, 14).getTime();
+    }
+
+    /**
+     * Updates the countdown timer based on the current date and next Valentine's Day.
      */
     function updateCountdown() {
+      const targetDate = getNextValentineDate();
       const currentDate = new Date().getTime();
       const timeLeft = targetDate - currentDate;
   
       if (timeLeft <= 0) {
-        document.querySelector('.countdown').innerHTML = '<p>Time\'s up! It\'s Valentine Day 💖💖💖 </p>';
+        countdown.innerHTML = '<p>Time\'s up! It\'s Valentine Day 💖💖💖 </p>';
         return;
       }
   
@@ -109,10 +135,10 @@ document.addEventListener('DOMContentLoaded', function () {
       const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
   
-      document.getElementById('days').innerText = days;
-      document.getElementById('hours').innerText = hours;
-      document.getElementById('minutes').innerText = minutes;
-      document.getElementById('seconds').innerText = seconds;
+      daysEl.innerText = days;
+      hoursEl.innerText = hours;
+      minutesEl.innerText = minutes;
+      secondsEl.innerText = seconds;
     }
   
     updateCountdown();
