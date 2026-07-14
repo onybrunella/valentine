@@ -238,16 +238,18 @@ button:hover {
     color: #fff; 
 }
 
-/* Heart animation */
+/* Falling emoji animation */
 .heart {
     position: fixed;
-    background: url(../img/heart.png) no-repeat;
-    background-size: contain;
     top: 0;
-    width: 100px;
-    height: 100px;
+    width: auto;
+    height: auto;
+    background: none;
+    line-height: 1;
+    font-size: 2rem;
     pointer-events: none;
     z-index: 0;
+    user-select: none;
     animation: heart-fall linear infinite;
 }
 

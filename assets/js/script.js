@@ -70,15 +70,19 @@ function accept() {
 }
 
 /**
- * Creates falling hearts across the full viewport width.
- * @param {number} count - The number of hearts to create.
+ * Creates falling emoji confetti across the full viewport width.
+ * @param {number} count - The number of emojis to create.
  */
 function fallingHearts(count) {
+    const emojis = ["🍓", "✨", "🫧", "🦋", "🍒", "💫", "🧸", "🍬", "🌙", "🪽", "🧁", "🎐"];
+
     for (let i = 0; i < count; i++) {
         const heart = document.createElement("div");
         heart.classList.add("heart");
-        // Keep hearts on-screen (100px wide) across the full viewport
+        heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        // Keep items on-screen across the full viewport
         heart.style.left = Math.random() * 90 + "%";
+        heart.style.fontSize = 1.4 + Math.random() * 1.6 + "rem";
         heart.style.animationDuration = Math.random() * 3 + 2 + "s";
         heart.style.animationDelay = Math.random() * 2 + "s";
         document.body.appendChild(heart);
@@ -87,7 +91,7 @@ function fallingHearts(count) {
 
 if (window.location.pathname.includes("celebration.html")) {
     document.addEventListener("DOMContentLoaded", function () {
-        fallingHearts(20);
+        fallingHearts(24);
     });
 }
 
@@ -127,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const timeLeft = targetDate - currentDate;
   
       if (timeLeft <= 0) {
-        countdown.innerHTML = '<p>Time\'s up! It\'s Valentine Day 💖💖💖 </p>';
+        countdown.innerHTML = '<p>Time\'s up! It\'s Valentine\'s Day 🍓✨</p>';
         return;
       }
   
